@@ -48,11 +48,28 @@ func _input(event: InputEvent) -> void:
 	tween.play()
 
 
-func _on_tween_end(finished_tween: Tween):
+func _on_tween_end(finished_tween: Tween) -> void:
+	catch_all()
+	
 	if finished_tween != tween:
 		return
 	
 	tween = create_tween()
 	const duration = 0.1
 	tween.tween_property(self, ^"_tongue_global_position", tongue.global_position + Vector2(0, -24), duration)
+	tween.finished.connect(_on_retract_end.bind(tween))
 	tween.play()
+
+
+func _on_retract_end(finished_tween: Tween) -> void:
+	if finished_tween != tween:
+		return
+	
+	for fly: Fly in get_tree().get_nodes_in_group(&"caught"):
+		fly.queue_free()
+
+
+
+func catch_all() -> void:
+	for fly: Fly in get_tree().get_nodes_in_group(&"caught"):
+		fly.reparent(tongue_tip)

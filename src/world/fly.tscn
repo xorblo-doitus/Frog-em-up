@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://vfc5ruiqttgl"]
+
+[ext_resource type="Script" uid="uid://qctntaq0xj7u" path="res://src/world/fly.gd" id="1_44ql3"]
+[ext_resource type="Texture2D" uid="uid://ba3hcx0dq5kym" path="res://src/assets/images/sprites/fly/body.png" id="1_ywwmm"]
+[ext_resource type="PackedScene" uid="uid://cxeo10q80aadq" path="res://src/world/wing.tscn" id="2_5pcgt"]
+
+[node name="Fly" type="Node2D"]
+script = ExtResource("1_44ql3")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("1_ywwmm")
+
+[node name="Wing" type="Marker2D" parent="."]
+position = Vector2(26, -15)
+rotation = -0.399791
+
+[node name="Wing" parent="Wing" instance=ExtResource("2_5pcgt")]
+
+[node name="Wing2" type="Marker2D" parent="."]
+position = Vector2(-26, -15)
+rotation = 3.54127
+
+[node name="Wing" parent="Wing2" instance=ExtResource("2_5pcgt")]

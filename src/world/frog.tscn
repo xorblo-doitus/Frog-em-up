@@ -30,7 +30,7 @@ scale = Vector2(-1, -1)
 
 [node name="Tongue" type="Marker2D" parent="."]
 position = Vector2(0, -33)
-rotation = 0.872665
+rotation = -0.64583
 
 [node name="TongueLine" type="Line2D" parent="Tongue"]
 points = PackedVector2Array(0, 0, 0, -24)
@@ -50,7 +50,7 @@ texture = ExtResource("2_hvqnp")
 position = Vector2(-12, -4)
 
 [node name="Eye" parent="eyes/EyeLeft" instance=ExtResource("1_elrpa")]
-rotation = 0.872665
+rotation = -0.582018
 min_angle_rad = -0.872665
 max_angle_rad = 0.872665
 
@@ -58,7 +58,7 @@ max_angle_rad = 0.872665
 position = Vector2(12, -4)
 
 [node name="Eye" parent="eyes/EyeRight" instance=ExtResource("1_elrpa")]
-rotation = 0.872665
+rotation = -0.627845
 min_angle_rad = -0.872665
 max_angle_rad = 0.872665
 

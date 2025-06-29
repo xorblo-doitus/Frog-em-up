@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=4 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://cip48wlv8e2al" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="PackedScene" uid="uid://d3f8y65f03tqo" path="res://src/world/frog.tscn" id="2_6fy3g"]
+[ext_resource type="PackedScene" uid="uid://vfc5ruiqttgl" path="res://src/world/fly.tscn" id="3_jte2u"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_nomqr")
@@ -13,3 +14,33 @@ color = Color(0, 0.658335, 0.97483, 1)
 
 [node name="Frog" parent="." instance=ExtResource("2_6fy3g")]
 position = Vector2(533, 1017)
+
+[node name="Fly" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(231, 236)
+
+[node name="Fly2" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(807, 312)
+
+[node name="Fly3" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(503, 380)
+
+[node name="Fly4" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(284, 488)
+
+[node name="Fly5" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(685, 552)
+
+[node name="Fly6" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(400, 712)
+
+[node name="Fly7" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(777, 792)
+
+[node name="Fly8" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(553, 146)
+
+[node name="Fly9" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(888, 134)
+
+[node name="Fly10" parent="." instance=ExtResource("3_jte2u")]
+position = Vector2(162, 820)
