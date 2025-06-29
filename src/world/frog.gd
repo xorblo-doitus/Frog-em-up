@@ -43,6 +43,7 @@ func _input(event: InputEvent) -> void:
 	tween.tween_property(self, ^"_tongue_global_position", event.global_position, duration)
 	
 	_tongue_out = true
+	tongue.rotation = 0
 	
 	tween.finished.connect(_on_tween_end.bind(tween))
 	
@@ -66,6 +67,8 @@ func _on_tween_end(finished_tween: Tween) -> void:
 func _on_retract_end(finished_tween: Tween) -> void:
 	if finished_tween != tween:
 		return
+	
+	_tongue_out = false
 	
 	for fly: Fly in get_tree().get_nodes_in_group(&"caught"):
 		fly.queue_free()
