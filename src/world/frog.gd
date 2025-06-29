@@ -14,6 +14,18 @@ extends Node2D
 @onready var tongue_line: Line2D = $Tongue/TongueLine
 @onready var tongue_tip: Sprite2D = $Tongue/TongueTip
 @onready var croak: AudioStreamPlayer = $Croak
+@onready var _legs: Array[Node2D] = [
+	$LegUpperLeft,
+	$LegUpperRight,
+	$LegLowerLeft,
+	$LegLoweRight
+]
+
+var lives: int = 4:
+	set(new):
+		lives = new
+		for i in _legs.size():
+			_legs[i].visible = i < lives
 
 var _tongue_out: bool = false
 @warning_ignore("unused_private_class_variable")
@@ -84,3 +96,26 @@ func _on_retract_end(finished_tween: Tween) -> void:
 func catch_all() -> void:
 	for fly: Fly in get_tree().get_nodes_in_group(&"caught"):
 		fly.reparent(tongue_tip)
+
+
+var _invicible: bool = false
+func hit() -> void:
+	if _invicible:
+		return
+	_invicible = true
+	
+	lives -= 1
+	create_tween().tween_property(
+		self,
+		"global_position:x",
+		540 + randf_range(-300, 300),
+		0.2
+	)
+	croak.play()
+	
+	if lives < 0:
+		Globals.stop()
+	
+	await get_tree().create_timer(1).timeout
+	
+	_invicible = false

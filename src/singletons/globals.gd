@@ -8,7 +8,7 @@ signal highscore_changed(new_high_score: int)
 signal play()
 signal loose()
 
-
+var playing: bool = false
 var frog: Frog
 
 
@@ -23,6 +23,13 @@ var highscore: int = 0:
 
 
 func restart() -> void:
+	score = 0
+	playing = true
+	play.emit()
+
+
+func stop():
 	if score > highscore:
 		highscore = score
-	score = 0
+	playing = false
+	loose.emit()

@@ -32,12 +32,16 @@ offset_right = 1080.0
 offset_bottom = 1080.0
 color = Color(0, 0.658335, 0.97483, 1)
 
+[node name="Frog" parent="." instance=ExtResource("2_6fy3g")]
+position = Vector2(540, 942)
+
 [node name="Down" type="Path2D" parent="."]
 position = Vector2(-1, 2)
 curve = SubResource("Curve2D_l0av5")
 script = ExtResource("2_jte2u")
 fly_scene = ExtResource("3_bsf3i")
-delay = 0.5
+delay = 2.0
+delay_random_delta = 2.0
 
 [node name="Homing" type="Path2D" parent="."]
 position = Vector2(-1, 2)
@@ -61,12 +65,9 @@ position = Vector2(1527, 698)
 curve = SubResource("Curve2D_43c6p")
 script = ExtResource("2_jte2u")
 fly_scene = ExtResource("4_43c6p")
-delay = 20.0
+delay = -20.0
 delay_random_delta = 10.0
 speed_multiplier_base = 0.4
-
-[node name="Frog" parent="." instance=ExtResource("2_6fy3g")]
-position = Vector2(540, 942)
 
 [node name="GUI" type="Control" parent="."]
 layout_mode = 3
@@ -110,9 +111,5 @@ text = "Score"
 [node name="Play" type="Button" parent="GUI/Menu"]
 layout_mode = 2
 text = "Play"
-
-[node name="FlyDown" parent="." instance=ExtResource("3_bsf3i")]
-position = Vector2(171, 247)
-hitbox_margin = 5
 
 [connection signal="pressed" from="GUI/Menu/Play" to="." method="_on_play_pressed"]

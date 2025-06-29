@@ -8,4 +8,3 @@ modulate = Color(0.656396, 0.428572, 1, 1)
 scale = Vector2(0.46875, 0.46875)
 script = ExtResource("2_yb3ab")
 radius = 15
-speed = 100.0

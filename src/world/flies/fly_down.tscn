@@ -6,3 +6,4 @@
 [node name="FlyDown" instance=ExtResource("1_oew7m")]
 script = ExtResource("2_akpjm")
 score = 50
+speed = 400.0
