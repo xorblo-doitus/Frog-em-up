@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://d3f8y65f03tqo"]
+
+[ext_resource type="PackedScene" uid="uid://dtkpt7551ebmf" path="res://src/world/leg.tscn" id="1_bcp7e"]
+[ext_resource type="PackedScene" uid="uid://cli575joj7uhx" path="res://src/world/eye.tscn" id="1_elrpa"]
+[ext_resource type="Script" uid="uid://ecv4xgtdw5l7" path="res://src/world/frog.gd" id="1_enw8t"]
+[ext_resource type="Texture2D" uid="uid://rfl7g3mqlmsy" path="res://src/assets/images/sprites/frog/body.png" id="2_hvqnp"]
+[ext_resource type="Texture2D" uid="uid://bsv0d22m5qpxq" path="res://src/assets/images/sprites/frog/tongue.png" id="3_ggb0q"]
+[ext_resource type="Texture2D" uid="uid://dliighkrlfp37" path="res://src/assets/images/sprites/frog/tongue_tip.png" id="4_rpi77"]
+[ext_resource type="Texture2D" uid="uid://bhc01hoyi5ws6" path="res://src/assets/images/sprites/frog/eye_covers.png" id="6_abt01"]
+
+[node name="Frog" type="Node2D"]
+script = ExtResource("1_enw8t")
+min_tongue_angle_rad = -0.872665
+max_tongue_angle_rad = 0.872665
+
+[node name="LegUpperLeft" parent="." instance=ExtResource("1_bcp7e")]
+position = Vector2(-23, -8)
+
+[node name="LegUpperRight" parent="." instance=ExtResource("1_bcp7e")]
+position = Vector2(23, -8)
+scale = Vector2(-1, 1)
+
+[node name="LegLowerLeft" parent="." instance=ExtResource("1_bcp7e")]
+position = Vector2(-23, 18)
+scale = Vector2(1, -1)
+
+[node name="LegLoweRight" parent="." instance=ExtResource("1_bcp7e")]
+position = Vector2(23, 18)
+scale = Vector2(-1, -1)
+
+[node name="Tongue" type="Marker2D" parent="."]
+position = Vector2(0, -33)
+rotation = -0.800819
+
+[node name="TongueLine" type="Line2D" parent="Tongue"]
+points = PackedVector2Array(0, 0, 0, -24)
+texture = ExtResource("3_ggb0q")
+texture_mode = 2
+
+[node name="TongueTip" type="Sprite2D" parent="Tongue"]
+position = Vector2(0, -24)
+texture = ExtResource("4_rpi77")
+
+[node name="Body" type="Sprite2D" parent="."]
+texture = ExtResource("2_hvqnp")
+
+[node name="eyes" type="Marker2D" parent="."]
+
+[node name="EyeLeft" type="Marker2D" parent="eyes"]
+position = Vector2(-12, -4)
+
+[node name="Eye" parent="eyes/EyeLeft" instance=ExtResource("1_elrpa")]
+rotation = -0.531083
+min_angle_rad = -0.872665
+max_angle_rad = 0.872665
+
+[node name="EyeRight" type="Marker2D" parent="eyes"]
+position = Vector2(12, -4)
+
+[node name="Eye" parent="eyes/EyeRight" instance=ExtResource("1_elrpa")]
+rotation = -0.699606
+min_angle_rad = -0.872665
+max_angle_rad = 0.872665
+
+[node name="EyeCovers" type="Sprite2D" parent="eyes"]
+texture = ExtResource("6_abt01")

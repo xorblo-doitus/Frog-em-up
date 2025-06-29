@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtkpt7551ebmf"]
+
+[ext_resource type="Texture2D" uid="uid://dixxca5s0x2mu" path="res://src/assets/images/sprites/frog/leg.png" id="1_dd6vb"]
+
+[node name="LegUpperLeft" type="Marker2D"]
+
+[node name="Leg" type="Sprite2D" parent="."]
+position = Vector2(-11, -14)
+texture = ExtResource("1_dd6vb")

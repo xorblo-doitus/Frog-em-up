@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cli575joj7uhx"]
+
+[ext_resource type="Texture2D" uid="uid://c2626xdcjeep0" path="res://src/assets/images/sprites/frog/eye.png" id="1_0wlel"]
+[ext_resource type="Script" uid="uid://62jw6367ev5f" path="res://src/world/eye.gd" id="2_f2to8"]
+
+[node name="Eye" type="Sprite2D"]
+texture = ExtResource("1_0wlel")
+script = ExtResource("2_f2to8")
+min_angle_rad = -0.174533
+max_angle_rad = 0.174533
