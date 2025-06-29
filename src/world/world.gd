@@ -19,7 +19,6 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	Globals.difficulty += delta/20
-	print(Globals.difficulty)
 
 
 func _on_play_pressed() -> void:
