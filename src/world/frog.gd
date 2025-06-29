@@ -8,6 +8,7 @@ extends Node2D
 @onready var tongue: Marker2D = $Tongue
 @onready var tongue_line: Line2D = $Tongue/TongueLine
 @onready var tongue_tip: Sprite2D = $Tongue/TongueTip
+@onready var croak: AudioStreamPlayer = $Croak
 
 var _tongue_out: bool = false
 @warning_ignore("unused_private_class_variable")
@@ -46,6 +47,7 @@ func _input(event: InputEvent) -> void:
 	tween.finished.connect(_on_tween_end.bind(tween))
 	
 	tween.play()
+	croak.play(0.1)
 
 
 func _on_tween_end(finished_tween: Tween) -> void:

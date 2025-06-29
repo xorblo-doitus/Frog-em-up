@@ -2,4 +2,4 @@
 
 | File(s) | Source(s) |
 | -------- | ------- |
-| [File name](path/to/file_name.example) | [Source name](https://example.com)  |
+| [frog.ogg](src/assets/audio/sfx/frog.ogg) | [egomassive, freesound.org]([https://example.com](https://freesound.org/people/egomassive/sounds/536759/))  |
