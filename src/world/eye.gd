@@ -8,6 +8,6 @@ extends Sprite2D
 
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
-	look_at(get_global_mouse_position() - Vector2(0, 50))
+	look_at(get_global_mouse_position() - Vector2(0, 100))
 	rotation += PI/2
 	rotation = clamp(rotation, min_angle_rad, max_angle_rad)

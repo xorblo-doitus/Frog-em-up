@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bu6bwlly466mc"]
+
+[ext_resource type="PackedScene" uid="uid://vfc5ruiqttgl" path="res://src/world/fly.tscn" id="1_oew7m"]
+[ext_resource type="Script" uid="uid://cn47p7p3ryiaj" path="res://src/world/flies/fly_down.gd" id="2_akpjm"]
+
+[node name="FlyDown" instance=ExtResource("1_oew7m")]
+script = ExtResource("2_akpjm")
+score = 50

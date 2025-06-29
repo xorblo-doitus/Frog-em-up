@@ -1,4 +1,5 @@
 @tool
+class_name Frog
 extends Node2D
 
 
@@ -29,7 +30,7 @@ var _tongue_global_position: Vector2:
 func _process(delta: float) -> void:
 	if _tongue_out:
 		return
-	tongue.look_at(get_global_mouse_position() - Vector2(0, 50))
+	tongue.look_at(get_global_mouse_position() - Vector2(0, 100))
 	tongue.rotation = clamp(tongue.rotation + PI/2, min_tongue_angle_rad, max_tongue_angle_rad)
 
 var tween: Tween

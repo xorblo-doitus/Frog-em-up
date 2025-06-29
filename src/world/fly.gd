@@ -4,11 +4,18 @@ class_name Fly
 
 @onready var wing: Wing = $Wing/Wing
 @export_range(0, 100, 1, "or_greater", "or_less") var score: int = 10
-@export_range(1, 100, 1, "or_greater") var radius: int = 32
+@export_range(1, 100, 1, "or_greater") var radius: int = 32:
+	set(new):
+		radius = new
+		scale = Vector2.ONE * (new / 32.0)
 @export_range(1, 100, 1, "or_greater") var hitbox_margin: int = 5
+@export_range(1, 1000, 1, "or_greater") var speed: float = 500
 
 
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		set_process(false)
+		set_physics_process(false)
 	wing.animation_player.seek(0.5)
 
 func _input(event: InputEvent) -> void:
@@ -32,4 +39,4 @@ func _on_mouse_input(event: InputEventMouseButton) -> void:
 		return
 	
 	add_to_group(&"caught")
-	Score.score += score
+	Globals.score += score

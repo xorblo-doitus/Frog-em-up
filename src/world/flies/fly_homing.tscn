@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://1vngqng3luqe"]
+
+[ext_resource type="PackedScene" uid="uid://vfc5ruiqttgl" path="res://src/world/fly.tscn" id="1_lcrtg"]
+[ext_resource type="Script" uid="uid://bflde0tqg8bt4" path="res://src/world/flies/fly_homing.gd" id="2_yb3ab"]
+
+[node name="FlyHoming" instance=ExtResource("1_lcrtg")]
+modulate = Color(0.656396, 0.428572, 1, 1)
+scale = Vector2(0.46875, 0.46875)
+script = ExtResource("2_yb3ab")
+radius = 15
+speed = 100.0

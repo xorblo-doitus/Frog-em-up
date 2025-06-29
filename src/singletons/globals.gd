@@ -4,6 +4,14 @@ extends Node
 signal score_changed(new_score: int)
 signal highscore_changed(new_high_score: int)
 
+
+signal play()
+signal loose()
+
+
+var frog: Frog
+
+
 var score: int = 0:
 	set(new):
 		score = new

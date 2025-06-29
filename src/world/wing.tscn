@@ -3,6 +3,21 @@
 [ext_resource type="Script" uid="uid://df88fc3hvod54" path="res://src/world/wing.gd" id="1_2u3ly"]
 [ext_resource type="Texture2D" uid="uid://bvhcsihyyv4da" path="res://src/assets/images/sprites/fly/wing.png" id="1_ty2ea"]
 
+[sub_resource type="Animation" id="Animation_2u3ly"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_ty2ea"]
 resource_name = "fly"
 loop_mode = 1
@@ -17,21 +32,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [0.0, -0.523599, 0.523599, 0.0]
-}
-
-[sub_resource type="Animation" id="Animation_2u3ly"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mj7m5"]
