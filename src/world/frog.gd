@@ -66,7 +66,7 @@ func _input(event: InputEvent) -> void:
 	tween.finished.connect(_on_tween_end.bind(tween))
 	
 	tween.play()
-	croak.play(0.1)
+	#croak.play(0.1)
 
 
 func _on_tween_end(finished_tween: Tween) -> void:

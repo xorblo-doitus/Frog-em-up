@@ -11,6 +11,7 @@ class_name Fly
 @export_range(1, 100, 1, "or_greater") var hitbox_margin: int = 5
 @export_range(1, 1000, 1, "or_greater") var speed: float = 500
 
+@onready var buzz: AudioStreamPlayer = $Buzz
 
 var alive: bool = true
 
@@ -27,6 +28,7 @@ func _input(event: InputEvent) -> void:
 		_on_mouse_input(event)
 
 
+@warning_ignore("unused_parameter")
 func _physics_process(delta: float) -> void:
 	if alive and is_touching(Globals.frog.global_position):
 		Globals.frog.hit()
@@ -51,6 +53,9 @@ func _on_mouse_input(event: InputEventMouseButton) -> void:
 	alive = false
 	add_to_group(&"caught")
 	Globals.score += score
+	buzz.finished.connect(buzz.queue_free)
+	buzz.play()
+	buzz.reparent(Globals.frog)
 
 
 func is_touching(global_point: Vector2) -> bool:
