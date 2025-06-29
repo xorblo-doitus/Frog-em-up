@@ -4,6 +4,10 @@ extends Node2D
 
 @export_range(-180, 180, 0.001, "radians_as_degrees") var min_tongue_angle_rad: float = -PI
 @export_range(-180, 180, 0.001, "radians_as_degrees") var max_tongue_angle_rad: float = PI
+@export_range(0, 100, 1) var tongue_length: int = 50:
+	set(new):
+		tongue_length = new
+		_tongue_global_position = tongue.global_position + Vector2(0, -new)
 
 @onready var tongue: Marker2D = $Tongue
 @onready var tongue_line: Line2D = $Tongue/TongueLine
@@ -14,6 +18,7 @@ var _tongue_out: bool = false
 @warning_ignore("unused_private_class_variable")
 var _tongue_global_position: Vector2:
 	set(new):
+		tongue.rotation = 0
 		tongue_tip.global_position = new
 		tongue_line.set_point_position(1, tongue_line.to_local(new))
 	get:
@@ -59,7 +64,7 @@ func _on_tween_end(finished_tween: Tween) -> void:
 	
 	tween = create_tween()
 	const duration = 0.1
-	tween.tween_property(self, ^"_tongue_global_position", tongue.global_position + Vector2(0, -24), duration)
+	tween.tween_property(self, ^"_tongue_global_position", tongue.global_position + Vector2(0, -tongue_length), duration)
 	tween.finished.connect(_on_retract_end.bind(tween))
 	tween.play()
 

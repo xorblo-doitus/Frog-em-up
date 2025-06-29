@@ -21,31 +21,32 @@ min_tongue_angle_rad = -0.872665
 max_tongue_angle_rad = 0.872665
 
 [node name="LegUpperLeft" parent="." instance=ExtResource("1_bcp7e")]
-position = Vector2(-23, -8)
+position = Vector2(-63, -32)
 
 [node name="LegUpperRight" parent="." instance=ExtResource("1_bcp7e")]
-position = Vector2(23, -8)
+position = Vector2(64, -31)
 scale = Vector2(-1, 1)
 
 [node name="LegLowerLeft" parent="." instance=ExtResource("1_bcp7e")]
-position = Vector2(-23, 18)
+position = Vector2(-57, 47)
 scale = Vector2(1, -1)
 
 [node name="LegLoweRight" parent="." instance=ExtResource("1_bcp7e")]
-position = Vector2(23, 18)
+position = Vector2(52, 51)
 scale = Vector2(-1, -1)
 
 [node name="Tongue" type="Marker2D" parent="."]
-position = Vector2(0, -33)
+position = Vector2(0, -65)
 rotation = 0.872665
 
 [node name="TongueLine" type="Line2D" parent="Tongue"]
-points = PackedVector2Array(0, 0, 0, -24)
+points = PackedVector2Array(0, 0, 0, -50)
+width = 28.0
 texture = ExtResource("3_ggb0q")
 texture_mode = 2
 
 [node name="TongueTip" type="Sprite2D" parent="Tongue"]
-position = Vector2(0, -24)
+position = Vector2(0, -50)
 texture = ExtResource("4_rpi77")
 
 [node name="Body" type="Sprite2D" parent="."]
@@ -54,7 +55,7 @@ texture = ExtResource("2_hvqnp")
 [node name="eyes" type="Marker2D" parent="."]
 
 [node name="EyeLeft" type="Marker2D" parent="eyes"]
-position = Vector2(-12, -4)
+position = Vector2(-24, -7)
 
 [node name="Eye" parent="eyes/EyeLeft" instance=ExtResource("1_elrpa")]
 rotation = 0.872665
@@ -62,7 +63,7 @@ min_angle_rad = -0.872665
 max_angle_rad = 0.872665
 
 [node name="EyeRight" type="Marker2D" parent="eyes"]
-position = Vector2(12, -4)
+position = Vector2(23, -8)
 
 [node name="Eye" parent="eyes/EyeRight" instance=ExtResource("1_elrpa")]
 rotation = 0.872665

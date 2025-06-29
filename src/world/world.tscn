@@ -13,7 +13,7 @@ offset_bottom = 1080.0
 color = Color(0, 0.658335, 0.97483, 1)
 
 [node name="Frog" parent="." instance=ExtResource("2_6fy3g")]
-position = Vector2(533, 1017)
+position = Vector2(531, 942)
 
 [node name="Fly" parent="." instance=ExtResource("3_jte2u")]
 position = Vector2(231, 236)
