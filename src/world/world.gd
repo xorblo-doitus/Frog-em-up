@@ -5,7 +5,7 @@ extends Node2D
 @onready var score: Label = $GUI/Score
 @onready var high_score: Label = $GUI/Menu/HighScore
 
-@onready var frog: Node2D = $Frog
+@onready var frog: Frog = $Frog
 
 
 func _ready() -> void:
@@ -17,10 +17,19 @@ func _ready() -> void:
 	Globals.loose.connect(_on_lost)
 
 
+func _physics_process(delta: float) -> void:
+	Globals.difficulty += delta/20
+	print(Globals.difficulty)
+
+
 func _on_play_pressed() -> void:
 	menu.hide()
 	score.show()
 	Globals.restart()
+	for fly in get_tree().get_nodes_in_group("fly"):
+		fly.queue_free()
+	frog.lives = 4
+	frog.global_position.x = 540
 
 
 func _on_lost() -> void:

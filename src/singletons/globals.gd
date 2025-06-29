@@ -10,6 +10,7 @@ signal loose()
 
 var playing: bool = false
 var frog: Frog
+var difficulty = 1
 
 
 var score: int = 0:
@@ -26,6 +27,7 @@ func restart() -> void:
 	score = 0
 	playing = true
 	play.emit()
+	difficulty = 0.5
 
 
 func stop():

@@ -10,7 +10,7 @@ random_pitch = 1.2
 streams_count = 1
 stream_0/stream = ExtResource("4_1o62o")
 
-[node name="Fly" type="Node2D"]
+[node name="Fly" type="Node2D" groups=["fly"]]
 script = ExtResource("1_44ql3")
 hitbox_margin = 20
 speed = 300.0

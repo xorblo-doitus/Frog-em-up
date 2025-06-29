@@ -40,7 +40,6 @@ position = Vector2(-1, 2)
 curve = SubResource("Curve2D_l0av5")
 script = ExtResource("2_jte2u")
 fly_scene = ExtResource("3_bsf3i")
-delay = 2.0
 delay_random_delta = 2.0
 
 [node name="Homing" type="Path2D" parent="."]
@@ -65,7 +64,7 @@ position = Vector2(1527, 698)
 curve = SubResource("Curve2D_43c6p")
 script = ExtResource("2_jte2u")
 fly_scene = ExtResource("4_43c6p")
-delay = -20.0
+delay = 20.0
 delay_random_delta = 10.0
 speed_multiplier_base = 0.4
 

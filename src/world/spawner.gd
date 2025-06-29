@@ -25,13 +25,14 @@ func spawn() -> void:
 	_follower.progress_ratio = randf()
 	var global_pos: Vector2 = _follower.global_position
 	
-	var new_fly: Fly = fly_scene.instantiate()
-	new_fly.speed *= speed_multiplier_base + (randf()-0.5) * speed_multiplier_delta * 2.0
-	add_child(new_fly)
-	new_fly.global_position = global_pos
-	print(new_fly.global_position)
+	if Globals.playing:
+		var new_fly: Fly = fly_scene.instantiate()
+		new_fly.speed *= speed_multiplier_base + (randf()-0.5) * speed_multiplier_delta * 2.0
+		add_child(new_fly)
+		new_fly.global_position = global_pos
+	
 	restart_timer()
 
 
 func restart_timer() -> void:
-	_timer.start(delay + (randf()-0.5) * delay_random_delta*2)
+	_timer.start((delay + (randf()-0.5) * delay_random_delta*2) / Globals.difficulty)
