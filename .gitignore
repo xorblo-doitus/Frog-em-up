@@ -1,9 +1,7 @@
 ########## Project specific ignores
 
 # LiveServer symlink
-# TODOTEMPLATE When using this template, replace "Template" with the name of
-# TODOTEMPLATE the repo and create the corresponding symlink
-docs/Template
+docs/Frog-em-up
 
 
 ########## Other
