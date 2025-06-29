@@ -1,13 +1,53 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dc00hltbnyu7a"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dc00hltbnyu7a"]
 
 [ext_resource type="Texture2D" uid="uid://dvst3otcyqgyr" path="res://src/assets/images/icons/popup/error.svg" id="1_y76j8"]
 [ext_resource type="Texture2D" uid="uid://cogwqm5agcbxu" path="res://src/assets/images/icons/popup/information.svg" id="2_lgjtk"]
 [ext_resource type="Texture2D" uid="uid://brttfkx8oqqm8" path="res://src/assets/images/icons/popup/warning.svg" id="3_ai2ew"]
 [ext_resource type="FontFile" uid="uid://dhkflqm4mwtgl" path="res://src/assets/fonts/BagelFatOne-Regular.ttf" id="4_prg12"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_prg12"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bpj8m"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0.794528, 0.321276, 0.133333)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7bw3"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s3v0m"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0.792157, 0.317647, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
 [resource]
 default_font = ExtResource("4_prg12")
 default_font_size = 64
+Button/colors/font_color = Color(0, 0.792157, 0.317647, 1)
+Button/colors/font_focus_color = Color(0, 0.792157, 0.317647, 1)
+Button/colors/font_hover_color = Color(0, 0.792157, 0.317647, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0.792157, 0.317647, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 24
+Button/styles/focus = SubResource("StyleBoxEmpty_prg12")
+Button/styles/hover = SubResource("StyleBoxFlat_bpj8m")
+Button/styles/normal = SubResource("StyleBoxEmpty_x7bw3")
+Button/styles/pressed = SubResource("StyleBoxFlat_s3v0m")
 ErrorPopup/base_type = &"AcceptDialog"
 ErrorPopup/colors/error = Color(0.92, 0, 0, 1)
 ErrorPopup/colors/info = Color(0, 0.749, 1, 1)
@@ -15,3 +55,5 @@ ErrorPopup/colors/warning = Color(1, 0.8, 0, 1)
 ErrorPopup/icons/error = ExtResource("1_y76j8")
 ErrorPopup/icons/info = ExtResource("2_lgjtk")
 ErrorPopup/icons/warning = ExtResource("3_ai2ew")
+Label/colors/font_color = Color(0, 0.792157, 0.317647, 1)
+Label/constants/outline_size = 24
