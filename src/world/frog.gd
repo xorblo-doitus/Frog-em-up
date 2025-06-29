@@ -9,6 +9,50 @@ extends Node2D
 @onready var tongue_line: Line2D = $Tongue/TongueLine
 @onready var tongue_tip: Sprite2D = $Tongue/TongueTip
 
+var _tongue_out: bool = false
+@warning_ignore("unused_private_class_variable")
+var _tongue_global_position: Vector2:
+	set(new):
+		tongue_tip.global_position = new
+		tongue_line.set_point_position(1, tongue_line.to_local(new))
+	get:
+		return tongue_tip.global_position
+
+
+@warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
+	if _tongue_out:
+		return
 	tongue.look_at(get_global_mouse_position() - Vector2(0, 50))
 	tongue.rotation = clamp(tongue.rotation + PI/2, min_tongue_angle_rad, max_tongue_angle_rad)
+
+var tween: Tween
+func _input(event: InputEvent) -> void:
+	if not event is InputEventMouseButton:
+		return
+	
+	if event.button_index != MOUSE_BUTTON_LEFT:
+		return
+	
+	if not event.pressed:
+		return
+	
+	tween = create_tween()
+	const duration = 0.04
+	tween.tween_property(self, ^"_tongue_global_position", event.global_position, duration)
+	
+	_tongue_out = true
+	
+	tween.finished.connect(_on_tween_end.bind(tween))
+	
+	tween.play()
+
+
+func _on_tween_end(finished_tween: Tween):
+	if finished_tween != tween:
+		return
+	
+	tween = create_tween()
+	const duration = 0.1
+	tween.tween_property(self, ^"_tongue_global_position", tongue.global_position + Vector2(0, -24), duration)
+	tween.play()
