@@ -3,8 +3,9 @@ extends Node2D
 class_name Fly
 
 @onready var wing: Wing = $Wing/Wing
-@export_range(1, 100, 1, "or_greater") var radius = 32
-@export_range(1, 100, 1, "or_greater") var hitbox_margin = 5
+@export_range(0, 100, 1, "or_greater", "or_less") var score: int = 10
+@export_range(1, 100, 1, "or_greater") var radius: int = 32
+@export_range(1, 100, 1, "or_greater") var hitbox_margin: int = 5
 
 
 func _ready() -> void:
@@ -31,3 +32,4 @@ func _on_mouse_input(event: InputEventMouseButton) -> void:
 		return
 	
 	add_to_group(&"caught")
+	Score.score += score

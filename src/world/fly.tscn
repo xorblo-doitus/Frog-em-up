@@ -6,6 +6,7 @@
 
 [node name="Fly" type="Node2D"]
 script = ExtResource("1_44ql3")
+score = null
 
 [node name="Body" type="Sprite2D" parent="."]
 texture = ExtResource("1_ywwmm")

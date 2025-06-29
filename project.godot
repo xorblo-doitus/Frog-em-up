@@ -23,6 +23,7 @@ Dev="res://src/singletons/dev.gd"
 Wait="*res://src/singletons/wait.gd"
 GlobalInputs="*res://src/singletons/global_inputs.gd"
 ErrorPopupSingleton="*res://src/development/debugging/error_popup.tscn"
+Score="*res://src/singletons/score.gd"
 
 [custom]
 

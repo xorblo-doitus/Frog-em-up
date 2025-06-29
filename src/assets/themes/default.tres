@@ -1,10 +1,13 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://dc00hltbnyu7a"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dc00hltbnyu7a"]
 
 [ext_resource type="Texture2D" uid="uid://dvst3otcyqgyr" path="res://src/assets/images/icons/popup/error.svg" id="1_y76j8"]
 [ext_resource type="Texture2D" uid="uid://cogwqm5agcbxu" path="res://src/assets/images/icons/popup/information.svg" id="2_lgjtk"]
 [ext_resource type="Texture2D" uid="uid://brttfkx8oqqm8" path="res://src/assets/images/icons/popup/warning.svg" id="3_ai2ew"]
+[ext_resource type="FontFile" uid="uid://dhkflqm4mwtgl" path="res://src/assets/fonts/BagelFatOne-Regular.ttf" id="4_prg12"]
 
 [resource]
+default_font = ExtResource("4_prg12")
+default_font_size = 64
 ErrorPopup/base_type = &"AcceptDialog"
 ErrorPopup/colors/error = Color(0.92, 0, 0, 1)
 ErrorPopup/colors/info = Color(0, 0.749, 1, 1)
