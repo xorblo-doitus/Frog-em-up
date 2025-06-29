@@ -13,6 +13,7 @@ config_version=5
 config/name="Frog 'em up"
 config/tags=PackedStringArray("2d", "game", "game_jam")
 run/main_scene="res://src/world/world.tscn"
+config/custom_user_dir_name="frog_em_up"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 run/max_fps=60
 config/icon="res://icon.svg"
