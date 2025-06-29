@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciceafugib0p4"]
+[gd_scene load_steps=10 format=3 uid="uid://ciceafugib0p4"]
 
 [ext_resource type="Script" uid="uid://cip48wlv8e2al" path="res://src/world/world.gd" id="1_nomqr"]
 [ext_resource type="PackedScene" uid="uid://d3f8y65f03tqo" path="res://src/world/frog.tscn" id="2_6fy3g"]
 [ext_resource type="Script" uid="uid://b7upodh71esas" path="res://src/world/spawner.gd" id="2_jte2u"]
 [ext_resource type="PackedScene" uid="uid://bu6bwlly466mc" path="res://src/world/flies/fly_down.tscn" id="3_bsf3i"]
 [ext_resource type="PackedScene" uid="uid://1vngqng3luqe" path="res://src/world/flies/fly_homing.tscn" id="4_43c6p"]
+[ext_resource type="PackedScene" uid="uid://gmhckbm8m6pc" path="res://src/world/flies/gold_fly.tscn" id="5_l0av5"]
 
 [sub_resource type="Curve2D" id="Curve2D_l0av5"]
 _data = {
@@ -41,6 +42,14 @@ curve = SubResource("Curve2D_l0av5")
 script = ExtResource("2_jte2u")
 fly_scene = ExtResource("3_bsf3i")
 delay_random_delta = 2.0
+
+[node name="Gold" type="Path2D" parent="."]
+position = Vector2(-1, 2)
+curve = SubResource("Curve2D_l0av5")
+script = ExtResource("2_jte2u")
+fly_scene = ExtResource("5_l0av5")
+delay = 30.0
+delay_random_delta = 0.0
 
 [node name="Homing" type="Path2D" parent="."]
 position = Vector2(-1, 2)

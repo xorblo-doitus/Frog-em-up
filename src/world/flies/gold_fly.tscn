@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://gmhckbm8m6pc"]
+
+[ext_resource type="PackedScene" uid="uid://vfc5ruiqttgl" path="res://src/world/fly.tscn" id="1_1o8p8"]
+[ext_resource type="Script" uid="uid://cn47p7p3ryiaj" path="res://src/world/flies/fly_down.gd" id="2_14y3b"]
+
+[node name="GoldFly" instance=ExtResource("1_1o8p8")]
+modulate = Color(1, 1, 0, 1)
+scale = Vector2(1.5625, 1.5625)
+script = ExtResource("2_14y3b")
+score = 500
+radius = 40
+hitbox_margin = 30
+speed = 1000.0
