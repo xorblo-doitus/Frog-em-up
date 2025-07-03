@@ -6,4 +6,4 @@ You can play it [on itch.io](https://patou-todog.itch.io/frog-em-up).
 
 # Status
 
-In development
+LTS
